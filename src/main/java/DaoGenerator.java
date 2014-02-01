@@ -18,10 +18,10 @@ public class DaoGenerator {
 
     public static void main(String [] args) throws Exception{
         int version = 1;
-        String defaultPackage = "com.myapp.models";
+        String defaultPackage = "com.demo.models";
 
-        Schema schema = new Schema(1 , defaultPackage);
-        addEntity(schema);
+        Schema schema = new Schema(version , defaultPackage);
+        addUser(schema);
 
         new de.greenrobot.daogenerator.DaoGenerator().generateAll(schema , "./src/main/gen");
     }
@@ -31,6 +31,14 @@ public class DaoGenerator {
 
         demoEntity.addIdProperty();
         demoEntity.addStringProperty("name");
+    }
+
+    private static void addUser(Schema schema) {
+        Entity userEntity = schema.addEntity("User");
+
+        userEntity.addIdProperty();
+        userEntity.addStringProperty("name");
+        userEntity.addStringProperty("surname");
     }
 
 }
