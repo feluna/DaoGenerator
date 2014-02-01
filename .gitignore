@@ -1,0 +1,9 @@
+# IDEA Ignores
+*.iml
+*.ipr
+*.iws
+.idea/
+local.properties
+
+# Java class files
+*.class
